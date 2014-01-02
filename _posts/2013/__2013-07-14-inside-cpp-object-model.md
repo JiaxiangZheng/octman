@@ -9,7 +9,7 @@ tags:
 - 内存模型
 ---
 
-## 基本的C++内存模型
+### 基本的C++内存模型
 
 对于C++的类，有两类成员变量：静态与非静态，三类成员函数：静态、非静态和虚函数。
 其中静态成员（变量和函数）都是存在于对象模型之外的，而非静态成员变量则存在于对象
@@ -21,9 +21,9 @@ tags:
 
 [^1]: 对于多个继承，虚函数指针可能不止一个。
 
-## 构造函数
+### 构造函数
 
-###intrivial constructor
+### intrivial constructor
 
 1. the member object has a default constructor
 2. base class has a default constructor
@@ -36,7 +36,7 @@ as non-trivial, others are trivial, and for compiler, these trivial default
 constructor is useless, so it will not construct them.
 
 
-###copy constructor
+### copy constructor
 
 the application of copy constructor are various.
 
@@ -54,10 +54,10 @@ non-trivial copy constructor cases are list as follow:
 copy in some case)  
 * inheritage hierachy has one or more virtual base class (*to be further read*)
 
-##2.3program transformation semantics
+### 2.3program transformation semantics
 
 
-###Name Return Value optimization
+### Name Return Value optimization
 if the original code is:
 
     X foo() 
@@ -207,15 +207,15 @@ mangling，保证其名称在整个编译空间中独一无二。另外，成员
 贝？对于基类定义一个`virtual Base* clone()`函数，这样在深度拷贝的时候调用该函数
 即可。
 
-## 虚拟函数相关
+### 虚拟函数相关
 
 1. 单一继承的情况：
 2. 多重继承的情况：
 3. 虚继承的情况：
 
-#第7章 Cusp of Object Model
+## 第7章 Cusp of Object Model
 
-##编译器如何处理Template
+### 编译器如何处理Template
 
 具现模板类的时机，包括两类：
 
@@ -225,11 +225,11 @@ mangling，保证其名称在整个编译空间中独一无二。另外，成员
 
 此外，考虑virtual function与template结合起来。(see the book)
 
-##异常处理
+### 异常处理
 
 程序堆栈在跳出异常的时候做了什么，开销如何等等 (see book)
 
-##RTTI (RunTime Type Identification）
+### RTTI (RunTime Type Identification）
 
 cast相关的内容需要看一下。
 
