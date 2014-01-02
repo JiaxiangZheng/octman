@@ -1,6 +1,6 @@
-markdown: rdiscount
+markdown: maruku
 permalink: /:year/:month/:title/
-url: http://geeklu.com
-author: 卢克
+url: http://octman.com
+author: Tsung
 pygments: true
 paginate: 24
