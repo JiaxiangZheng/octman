@@ -4,4 +4,4 @@ permalink: /:year/:month/:title/
 url: http://octman.com
 author: Tsung
 pygments: true
-paginate: 24
+paginate: 10
