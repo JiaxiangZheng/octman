@@ -42,7 +42,11 @@ body {
 	line-height: 1;
 }
 ol, ul {
+    padding-left: 20px;
 	list-style: none;
+}
+li time {
+	font-family: helvetica, arial, sans-serif;
 }
 blockquote, q {
 	quotes: none;
@@ -56,7 +60,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+#tag_cloud {
+	margin: 20px 20px;
+	font-size: 120%;
+}
 body{
     font-size:16px;word-spacing:1px;
     margin-left:auto;
@@ -78,12 +85,18 @@ body>div {
     box-shadow: 0 0 10px 0 #cfcfcf;
     border-top: 6px solid #EE0000;
 }
+h1, h2, h3, h4 {
+	font-weight:bold;
+}
+h4 {
+	margin: 0px 0 10px 0
+}
 h1 {
     font-size: 28px;
     line-height: 28px;
     margin: 0 0 28px 0;
-	background-color: #000;
-	color: #fff;
+	background-color: #fff;
+	color: #f04c5c;
 	display: inline-block;
 	padding: 12px;
 }
@@ -113,11 +126,9 @@ p.intro {
 }
 ul {
     list-style-type: square;
-    padding-left: 12px;
 }
 ol {
     list-style-type: decimal;
-    padding-left: 12px;
 }
 dt {
     font-weight: 700;

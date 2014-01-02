@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《More Effective C++》摘录
+title: More Effective C++ 摘录
 categories:
 - Programming Language
 tags:
