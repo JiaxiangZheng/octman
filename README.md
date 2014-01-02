@@ -1,1 +1,11 @@
-这是使用了[Luke同学](http://geeklu.com)修改的Jekyll进行搭建的博客系统。
+This is a blog system with modified Jekyll by [Luke](http://geeklu.com), please
+refer to [my blog][BLOG] for more information.
+
+
+[BLOG]: http://octman.com/
+
+### TODO
+
+* Make the image path insertion to be more flexible.
+* Support LaTeX rendering with [MathJax](http://www.mathjax.org).
+* Adjust the original theme.

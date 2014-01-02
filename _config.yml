@@ -1,4 +1,5 @@
 markdown: maruku
+baseurl: /
 permalink: /:year/:month/:title/
 url: http://octman.com
 author: Tsung
