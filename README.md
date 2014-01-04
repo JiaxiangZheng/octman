@@ -8,4 +8,3 @@ refer to [my blog][BLOG] for more information.
 
 * Make the image path insertion to be more flexible.
 * Support LaTeX rendering with [MathJax](http://www.mathjax.org).
-* Adjust the original theme.
