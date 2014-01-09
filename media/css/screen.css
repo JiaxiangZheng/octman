@@ -18,10 +18,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 100%;
 }
 ol, ul {
-    padding-left: 20px;
+	margin-left: 0;
+    padding-left: 40px;
 	list-style: none;
 }
 li time {
@@ -40,14 +41,14 @@ table {
 	border-spacing: 0;
 }
 #tag_cloud {
-	margin: 20px 20px;
+	margin: 1.25em 1.25em;
 	font-size: 120%;
+	line-height: 120%;
 }
 body{
-    font-size:16px;word-spacing:1px;
+	font: normal 100% MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;
     margin-left:auto;
     margin-right:auto;
-    font-family:MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;
     color:#000000;
     background-color:#ffffff;
 }
@@ -67,44 +68,42 @@ body>div {
 h1, h2, h3, h4 {
 	font-weight:bold;
 }
-h4 {
-	margin: 0px 0 10px 0
-}
 h1 {
-    font-size: 28px;
-    line-height: 28px;
-    margin: 0 0 28px 0;
+    font-size: 1.75em;
+    line-height: 1.75em;
+	margin: 0 0 1.75em 0;
 	background-color: #fff;
 	color: #f04c5c;
 	display: inline-block;
-	padding: 12px;
+	padding: 0.75em;
 }
 h2 {
-    font-size: 26px;
-    line-height: 48px;
-    margin: 0 0 24px 0;
-}
-h2 i {
-	font-size: 18px;
-	color: #ccc;
+    font-size: 1.625em;
+    line-height: 3.0em;
+    margin: 0 0 1.5em 0;
 }
 h3 {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.25em;
+    line-height: 1.5em;
+    margin: 1.2em 0 1.0em 0;
 }
-section>h3 {
-    margin: 0 0 24px 0;
+h4 {
+	font-size: 1.0em;
+	margin: 0.75em 0px 0.75em 0
 }
 p, ul, ol, dl {
-    line-height: 24px;
-    margin: 0 0 24px 0;
+    line-height: 1.5em;
+    margin: 0 0 1.5em 0;
 }
 p.intro {
-    font-size: 24px;
-	line-height: 32px;
+    font-size: 1.5em;
+	line-height: 2.0em;
 }
 ul {
     list-style-type: square;
+}
+ul ul, ol ul {
+    list-style-type: circle;
 }
 ol {
     list-style-type: decimal;
@@ -116,12 +115,12 @@ code, pre {
     font-family: monospace;
 }
 pre {
-    border-left: 6px solid #edebea;
+    border-left: 0.5em solid #edebea;
     overflow: auto;
     font-family: monospace;
-    font-size: 14px;
-    padding: 12px;
-    margin: 0 0 24px;
+    font-size: 0.8em;
+    padding: 0.8;
+    margin: 0 0 1.5em;
 	background-color: #f3f3f3;
 }
 
@@ -157,18 +156,16 @@ strong {
 }
 
 img {
-	margin: auto;
-}
-
-img.avatar {
-    position: relative;
-    float: right;
+	max-width: 100%;
+	margin: 10px auto;
+	display: block;
 }
 
 .meta{
     text-align:right;
     font-size:14px;
     margin-bottom: 10px;
+	line-height: 150%;
 }
 
 dl .meta {
@@ -196,17 +193,17 @@ dl .meta {
 
 
 .paginator {
-font: 14px Arial,Helvetica,sans-serif;
-color: #AAA;
-margin: 20px 0;
-line-height: 150%;
-display: block;
+	font: 14px Arial,Helvetica,sans-serif;
+	color: #AAA;
+	margin: 20px 0;
+	line-height: 150%;
+	display: block;
 }
 
 .paginator a,.paginator span{
-padding: 0 4px;
-margin: 2px;
-text-decoration: none;
+	padding: 0 4px;
+	margin: 2px;
+	text-decoration: none;
 }
 
 .paginator .current-page {
@@ -220,14 +217,14 @@ text-decoration: none;
 }
 
 
-footer{
+footer {
 	display:block;
 	text-align:center;
 	border-top: 1px dashed #CCC;
 }
 
 footer small {
-	font-size: 13px;
+	font-size: 0.75em;
 	color: #999;
 }
 
@@ -247,5 +244,13 @@ footer a:hover {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(110,110,110,1.0)), to(rgba(100,100,100,1.0)));
     -webkit-box-shadow: rgba(0,0,0,1.0) 0px 0px 2px,rgba(255,255,255,0.15) 0px 1px 1px inset;
     text-decoration: none;
+}
+.main {
+	float: right;
+	width: 70%; 
+}
+.leftBar {
+	float: left;
+	width: 25%;
 }
 
