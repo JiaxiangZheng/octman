@@ -8,3 +8,10 @@ comments: yes
 
 * [Github](https://github.com/JiaxiangZheng)
 * [weibo](http://weibo.com/jxtsung)
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+## 友情链接
+
+- [zavatar](http://zavatar.co/)
+- [pongba](http://mindhacks.cn/)
