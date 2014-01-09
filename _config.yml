@@ -1,5 +1,6 @@
 markdown: kramdown
 baseurl: /
+url: http://octman.com
 permalink: /:year/:month/:title/
 author: Tsung
 pygments: true
