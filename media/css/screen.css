@@ -30,6 +30,10 @@ li time {
 }
 blockquote, q {
 	quotes: none;
+	font-style: italic;
+    border-left: 0.5em solid #edebea;
+	padding: 0em 0em 0em 1em;
+	background-color: #f3f3f3;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -52,13 +56,15 @@ body{
     color:#000000;
     background-color:#ffffff;
 }
-
+section.post {
+	margin: 2em auto 2em auto;
+}
 body>div {
     width: 70%;
     min-width: 32em;
     max-width: 50em;
-    padding: 3em 3em 1.5em;
-    margin: 3em auto;
+    padding: 1.5em 3em;
+    margin: 1.5em auto;
     background-color: #fff;
     -moz-box-shadow: 0 0 10px 0 #cfcfcf;
     -webkit-box-shadow: 0 0 10px 0 #cfcfcf;
@@ -70,21 +76,15 @@ h1, h2, h3, h4 {
 }
 h1 {
     font-size: 1.75em;
-    line-height: 1.75em;
-	margin: 0 0 1.75em 0;
+	line-height: 1.75em;
 	background-color: #fff;
 	color: #f04c5c;
-	display: inline-block;
-	padding: 0.75em;
 }
 h2 {
     font-size: 1.625em;
-    line-height: 3.0em;
-    margin: 0 0 1.5em 0;
 }
 h3 {
     font-size: 1.25em;
-    line-height: 1.5em;
     margin: 1.2em 0 1.0em 0;
 }
 h4 {
@@ -93,7 +93,6 @@ h4 {
 }
 p, ul, ol, dl {
     line-height: 1.5em;
-    margin: 0 0 1.5em 0;
 }
 p.intro {
     font-size: 1.5em;
@@ -117,9 +116,7 @@ code, pre {
 pre {
     border-left: 0.5em solid #edebea;
     overflow: auto;
-    font-family: monospace;
-    font-size: 0.8em;
-    padding: 0.8;
+    padding: 0.8em;
     margin: 0 0 1.5em;
 	background-color: #f3f3f3;
 }
@@ -188,8 +185,14 @@ dl .meta {
 
 }
 
-.listing-item time{color:#999999;}
-.listing-seperator{font-weight:bold;}
+.listing-item time {
+	color:#999999;
+}
+.listing-seperator {
+	font-weight:bold;
+	font-size: 120%;
+	margin: 1em 0em;
+}
 
 
 .paginator {

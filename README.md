@@ -6,5 +6,5 @@ refer to [my blog][BLOG] for more information.
 
 ### TODO
 
-* Make the image path insertion to be more flexible.
+* Support flexible view on mobile or other platform 
 * Support LaTeX rendering with [MathJax](http://www.mathjax.org).
