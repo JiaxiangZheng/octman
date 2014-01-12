@@ -46,8 +46,8 @@ table {
 }
 #tag_cloud {
 	margin: 1.25em 1.25em;
-	font-size: 120%;
-	line-height: 120%;
+	font-size: 100%;
+	line-height: 200%;
 }
 body{
 	font: normal 100% MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;
