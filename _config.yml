@@ -2,6 +2,6 @@ markdown: kramdown
 baseurl: /
 url: http://octman.com
 permalink: /:year/:month/:title/
-author: Tsung
+author: JiaxiangZheng
 pygments: true
 paginate: 10
