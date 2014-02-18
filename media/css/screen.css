@@ -78,7 +78,6 @@ h1 {
     font-size: 1.75em;
 	line-height: 1.75em;
 	background-color: #fff;
-	color: #f04c5c;
 }
 h2 {
     font-size: 1.625em;
@@ -134,12 +133,6 @@ hr {
     background-color: #edebea;
     height: 2px;
     margin: 0 0 22px 0;
-}
-a {
-    color: #EE0000;
-}
-a:visited {
-    color: #B22222;
 }
 a.ss-icon {
 	font-size: 20px;
