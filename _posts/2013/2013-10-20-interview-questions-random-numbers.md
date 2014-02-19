@@ -2,7 +2,7 @@
 layout: post
 title: 随机数相关的面试题
 categories:
-- Algorithms
+- 算法与基础
 tags:
 - 面试题
 - 算法

@@ -2,7 +2,7 @@
 layout: post
 title: 读《失控》
 categories:
-- Mind
+- 阅读与思考
 tags:
 - life
 - diary

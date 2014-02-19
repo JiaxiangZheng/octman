@@ -2,7 +2,7 @@
 layout: post
 title: 设计模式初探
 categories:
-- Programming Language
+- 程序设计
 tags:
 - programming
 - software

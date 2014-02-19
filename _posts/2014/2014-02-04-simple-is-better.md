@@ -2,7 +2,7 @@
 layout: post
 title: 大道至简
 categories:
-- Mind
+- 阅读与思考
 tags:
 - diary
 - 思维

@@ -2,7 +2,7 @@
 layout: post
 title: C++对象内存模型
 categories:
-- Programming Language
+- 程序设计
 tags:
 - c++
 - programming

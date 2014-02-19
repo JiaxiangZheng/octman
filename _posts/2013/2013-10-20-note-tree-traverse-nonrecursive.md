@@ -2,8 +2,7 @@
 layout: post
 title: 二叉树非递归遍历
 categories:
-- Algorithms
-- Data Struture
+- 算法与基础
 tags:
 - 面试题
 - 算法

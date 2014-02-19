@@ -2,7 +2,7 @@
 layout: post
 title: More Effective C++ 摘录
 categories:
-- Programming Language
+- 程序设计
 tags:
 - c++
 - programming

@@ -2,7 +2,7 @@
 layout: post
 title: 二分查找及其变形
 categories:
-- Algorithms
+- 算法与基础
 tags:
 - 面试题
 - 算法

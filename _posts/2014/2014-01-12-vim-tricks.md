@@ -2,7 +2,7 @@
 layout: post
 title: VIM高级技巧收集
 categories:
-- Tools
+- 编程与开发
 tags:
 - VIM
 - 工具

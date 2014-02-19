@@ -2,7 +2,7 @@
 layout: post
 title: 找工作面试总结
 categories:
-- Life
+- 算法与基础
 tags:
 - 面试题
 - diary

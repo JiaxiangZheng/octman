@@ -2,7 +2,7 @@
 layout: post
 title: 排列组合面试题
 categories:
-- Algorithms
+- 算法与基础
 tags:
 - 面试题
 - 算法
