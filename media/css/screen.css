@@ -112,12 +112,17 @@ dt {
 code, pre {
     font-family: monospace;
 }
+
 pre {
     border-left: 0.5em solid #edebea;
     overflow: auto;
     padding: 0.8em;
-    margin: 0 0 1.5em;
-	background-color: #f3f3f3;
+    margin: 20px;
+	background: #e9e9e9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+    font-size: 12px;
 }
 
 p code {
