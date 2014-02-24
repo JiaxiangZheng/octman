@@ -139,6 +139,10 @@ hr {
     height: 2px;
     margin: 0 0 22px 0;
 }
+a {
+	color: #375EAB;
+	text-decoration: none;
+}
 a.ss-icon {
 	font-size: 20px;
 	padding: 0 0.25em;
