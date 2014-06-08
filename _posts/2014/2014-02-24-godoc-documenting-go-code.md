@@ -4,8 +4,7 @@ title: Godoc-一个Go代码文档化工具
 categories:
 - 翻译与转载
 tags:
-- Golang
-- Godoc
+- Go语言
 ---
 
 本文翻译自[Godoc: documenting Go code](http://blog.golang.org/godoc-documenting-go-code)一文，一方面当作自己翻译的第一篇练习，另一方面也熟悉一下Go的文档化工具。下面是翻译内容：

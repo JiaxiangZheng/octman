@@ -4,8 +4,7 @@ title: Go的通信共享内存
 categories:
 - 翻译与转载
 tags:
-- Golang
-- Goroutine
+- Go语言
 ---
 
 本文翻译了Go官方博客的一篇文章[Share Memory By Communicating](http://blog.golang.org/share-memory-by-communicating)，同时也正好加强自己对Goroutine的理解。
