@@ -12,14 +12,7 @@ tags:
 当初记录这些内容的目的是给自己一个备忘录，让自己知道应该复习哪些内容，同时也方便
 后来回过头来重新复习。
 
-当然，这里的内容比较有限，主要是数据结构和算法的内容，最后包含少量的操作系统和计
-算机网络知识点，不过并不完全。具体到每一小节的知识点，有些内容我在博客里单独地作
-了一些笔记（如[随机数相关知识点][RAND-NOTES]）。当然，后面也会逐步地把之前记录的
-笔记添加进来。这里很多的链接是[**LeetCode**](http://oj.leetcode.com)上的内容，我在
-[GitHub](https://github.com/JiaxiangZheng/LeetCode/)上也记录了我自己做的一些题目
-的代码。
-
-[RAND-NOTES]: http://octman.sinaapp.com/?p=19
+当然，这里的内容比较有限，主要是数据结构和算法的内容，最后包含少量的操作系统和计算机网络知识点，不过并不完全。具体到每一小节的知识点，有些内容我在博客里单独地作了一些笔记（如[随机数相关知识点](/2013/10/interview-questions-random-numbers/)）。当然，后面也会逐步地把之前记录的笔记添加进来。这里很多的链接是[**LeetCode**](http://oj.leetcode.com)上的内容，我在[GitHub](https://github.com/JiaxiangZheng/LeetCode/)上也记录了我自己做的一些题目的代码。
 
 ### 栈和队列
 
@@ -57,7 +50,7 @@ tags:
 
 * 二叉树的遍历
     - 递归遍历的方法
-    - 非递归遍历的方法，可以参考之前写的文章<http://1.octman.sinaapp.com/?p=123>。
+    - 非递归遍历的方法，可以参考之前写的[文章](/2013/10/note-tree-traverse-nonrecursive/)。
 * 二叉树的插入删除操作
     - 主要可以参考算法导论上的内容
 * BST中两个结点交换位置，如何把它们找出来。[参考这里](http://chuansongme.com/n/97180)

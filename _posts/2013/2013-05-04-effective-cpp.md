@@ -2,7 +2,7 @@
 layout: post
 title: Effective C++ 摘录
 categories:
-- 程序设计
+- 编程与开发
 tags:
 - c++
 - programming
