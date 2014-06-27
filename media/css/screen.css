@@ -117,12 +117,9 @@ pre {
 }
 
 p code {
-    font-size: 12px;
-    border: 1px solid #edebea;
+    font-size: 80%;
 	padding: 2px 4px;
-	color: #d14;
 	background-color: #f7f7f9;
-	border: 1px solid #e1e1e8;
 }
 hr {
     border: 0;
