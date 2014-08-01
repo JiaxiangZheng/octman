@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>LOVE</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    	.memory {
+    		width: 240px;
+    	}
+        .memory img {
+        	display: block;
+            max-width: 200px;
+            border-radius: 100px;
+            border: solid 2px  #07d774;
+            margin: 20px;
+            margin-bottom: 0px;
+        }
+        .memory p {
+        	color: #07d774;
+        	text-align: center;
+        	font-size: 150%;
+        	font-weight: bold;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="memory" id="love">
+    	<img src="photo.png" alt="love">
+    	<p>Love U</p>
+    </div>
+    <script>
+    	window.onload = function () {
+    		var div = document.getElementById("love"), 
+    			t = 0;
+    		div.style.position = "absolute";
+    		function move() {
+    			div.style.left = 300 + Math.floor(80*(2*Math.cos(t)-Math.cos(2*t))) + "px";
+    			div.style.top = 180 + Math.floor(80*(2*Math.sin(t)-Math.sin(2*t))) + "px";
+    			t += 0.1;
+    			setTimeout(move, 100);
+    		}
+    		move();
+    	};
+    </script>
+</body>
+</html>
