@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <style>
     	.memory {
-    		width: 240px;
+    		width: 140px;
     	}
         .memory img {
         	display: block;
-            max-width: 200px;
-            border-radius: 100px;
+            max-width: 100px;
+            border-radius: 50px;
             border: solid 2px  #07d774;
             margin: 20px;
             margin-bottom: 0px;
@@ -27,22 +27,58 @@
     </style>
 </head>
 <body>
-    <div class="memory" id="love">
-    	<img src="photo.png" alt="love">
-    	<p>Love U</p>
+    <div class="memory" id="love-LM">
+    	<img src="photo-m.png" alt="love">
+    </div>
+    <div class="memory" id="love-ZJX">
+    	<img src="photo-x.png" alt="love">
     </div>
     <script>
     	window.onload = function () {
-    		var div = document.getElementById("love"), 
-    			t = 0;
-    		div.style.position = "absolute";
-    		function move() {
-    			div.style.left = 300 + Math.floor(80*(2*Math.cos(t)-Math.cos(2*t))) + "px";
-    			div.style.top = 180 + Math.floor(80*(2*Math.sin(t)-Math.sin(2*t))) + "px";
-    			t += 0.1;
-    			setTimeout(move, 100);
-    		}
-    		move();
+            var divs = document.querySelectorAll(".memory"),
+                step = Math.PI / 180,
+                orig = {x: 550, y: 200},
+                radius = 80,
+                prePos = [{x: 0, y: 0}, {x: 0, y: 0}];
+
+            [].slice.call(divs).forEach(function (div, i) {
+                var t = 0, move, offset = 0;
+                div.style.position = "absolute";
+                move = function (evt) {
+                    div.style.left = orig.x - Math.floor(radius*(2*Math.sin(t)-Math.sin(2*t))) + "px";
+                    div.style.top = orig.y - Math.floor(radius*(2*Math.cos(t)-Math.cos(2*t))) + "px";
+                    if (i === 0) {
+                        t += step;
+                        offset = -offset;
+                    } else {
+                        t -= step;
+                    }
+
+                    if (Math.abs(t - Math.PI) < 1e-5 || Math.abs(t + Math.PI) < 1e-5) {
+                        div.style.left = orig.x + offset + "px";
+                        div.style.top = orig.y + 3*radius + offset + "px";
+                        div.querySelector("img").setAttribute("src", "photo-both.png");
+                        return;
+                    }
+//
+//                    prePos[i].x = parseFloat(div.style.left);
+//                    prePos[i].y = parseFloat(div.style.top);
+//                    var imgdiv = document.createElement("div");
+//                    imgdiv.style.position = "absolute";
+//                    imgdiv.style.left = prePos[i].x + "px";
+//                    imgdiv.style.top = prePos[i].y + "px";
+//
+//                    var img = document.createElement("img");
+//                    img.setAttribute("src", "heart.png");
+//                    img.style.width = "20px";
+//
+//                    imgdiv.appendChild(img);
+//                    document.body.appendChild(imgdiv);
+//
+                    setTimeout(move, 13);
+                }
+                move();
+            });
     	};
     </script>
 </body>
