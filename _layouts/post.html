@@ -1,18 +1,11 @@
 ---
 layout: default
 ---
-<section class="post">
-{{ content }}
-</section>
 
-<section class="meta">
-<span class="author">
-  <a href="http://octman.com">{{ site.author }}</a>
-</span>
-<span class="time">
-  /
-  <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
-</span>
-<br />
-</section>
+<article class="post">
+  <h2><a href="{{ page.url }}" title="{{ page.title }}"> {{ page.title }}</a></h2>
+  <p>Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p> 
+  {{ content }}
+</article>
+
 {% include comments.md %}

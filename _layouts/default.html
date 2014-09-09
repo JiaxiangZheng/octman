@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="author" content="{{ site.author }}" />
     <title>{{ page.title }} | {{ site.author }}</title>
 	<meta name="description" content="享受阅读与思考的乐趣">
 	<meta name="keywords" content="Golang,Programming,Computer Graphics,HTML,Linux,VIM,Code,Algorithm,Code,算法,程序员">
     <link href="/media/octman.png" rel="icon">
-    <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
-    <link rel="stylesheet" href="/media/css/highlight.css">
-    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
-    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
-    <link href="/media/css/screen.css" rel="stylesheet">
-
-    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
-
-  </head>
-  <body>
-    <div id="container">
-      <div id="main" role="main">
-        <header>
-        <div class="buttons">
-          <a href="/" class="ss-icon" title="首页">home</a>
-          <a href="/categories" class="ss-icon" title="分类" >list</a>
-          <a href="/tags" class="ss-icon" title="标签" >tags</a>
-          <a href="/guestbook" class="ss-icon" title="留言" >talk</a>
-          <a href="/about" class="ss-icon" title="关于" >user</a>
-        </div>
-    
-        <h1>{{ page.title }}</h1>
-        </header>
-        <hr>
-        <div id="toc">
-        </div>
-        <article class="content">
-        {{ content }}
-        </article>
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+      	<a href="/" class="navbar-brand">Tsung - 个人博客</a>
       </div>
+      <div>
+	      <ul class="nav navbar-nav">
+	        <li><a href="/" class="ss-icon" title="首页">首页</a></li>
+	        <li><a href="/categories" class="ss-icon" title="分类" >分类</a></li>
+	        <li><a href="/tags" class="ss-icon" title="标签" >标签</a></li>
+	        <li><a href="/guestbook" class="ss-icon" title="留言" >留言</a></li>
+	        <li><a href="/about" class="ss-icon" title="关于" >关于</a></li>
+	      </ul>
+      </div>
+    </nav>
+  </header>
+    
+  <section>
+  	{{content}}
+  </section>
 
-    <footer>
-        <p><small>Copyright &copy; Tsung 2013-2014 | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> &amp; <a href="https://github.com/JiaxiangZheng/octman">Github</a></small></p>
-    </footer>
-
-    </div>
-
-  </body>
+  <footer class="text-center">
+    <p><small>Copyright &copy; Tsung 2013-2014 | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> &amp; <a href="https://github.com/JiaxiangZheng/octman">Github</a></small></p>
+  </footer>
+</body>
 </html>
+
+<!--     <article>
+		<header>
+			<h2>ipsum dolor sit amet</h2>
+			<p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a></p> 
+		</header>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nesciunt vel, amet commodi tempora expedita id consequatur soluta repudiandae libero, deserunt totam harum perferendis rerum optio voluptate suscipit laboriosam voluptatem inventore quam assumenda explicabo est similique? Pariatur veniam nobis cumque.</p>
+    </article>
+
+	<article>
+		<header>
+			<h2>ipsum dolor sit amet</h2>
+			<p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a></p> 
+		</header>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores nesciunt vel, amet commodi tempora expedita id consequatur soluta repudiandae libero, deserunt totam harum perferendis rerum optio voluptate suscipit laboriosam voluptatem inventore quam assumenda explicabo est similique? Pariatur veniam nobis cumque.</p>
+    </article>
+
+ -->
