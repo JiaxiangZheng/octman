@@ -1,7 +1,3 @@
-This is a blog system with modified Jekyll by [Luke](http://geeklu.com), please
-refer to [my blog][BLOG] for more information.
-
-
 [BLOG]: http://octman.com/
 
 ### TODO
