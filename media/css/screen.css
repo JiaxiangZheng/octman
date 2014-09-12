@@ -25,6 +25,7 @@ blockquote, q {
     border-left: 0.5em solid #edebea;
 	padding: 0em 0em 0em 1em;
 	background-color: #f3f3f3;
+    margin-left: 0px;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -41,7 +42,7 @@ table {
 	line-height: 200%;
 }
 body {
-	font: normal 100% MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Helvetica", "Arial", "sans-serif";
     margin-top: 0;
     margin-bottom: 30px;
     margin-left:auto;
@@ -81,8 +82,9 @@ h4 {
 	font-size: 1.0em;
 	margin: 0.75em 0px 0.75em 0
 }
-p, ul, ol, dl {
+p, ul, ol, dl, pre {
     line-height: 1.5em;
+    font-size: 75%;
 }
 p.intro {
     font-size: 1.5em;
@@ -100,26 +102,21 @@ ol {
 dt {
     font-weight: 700;
 }
-code, pre {
-    font-family: monospace;
-}
 
+code {
+    font-family: consolas;
+}
 pre {
     border-left: 0.5em solid #edebea;
     overflow: auto;
     padding: 0.8em;
-    margin: 20px;
 	background: #e9e9e9;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-    font-size: 12px;
 }
-
-p code {
-    font-size: 80%;
-	padding: 2px 4px;
-	background-color: #f7f7f9;
+p code, li code, ul code {
+    padding: 0px 4px;
 }
 hr {
     border: 0;
@@ -151,7 +148,10 @@ strong {
 }
 
 img {
-	max-width: 100%;
+	max-width: 800px;
+    padding: 5px;
+    border: 2px solid gray;
+    box-shadow: 0 0 5px white;
 	margin: 10px auto;
 	display: block;
 }

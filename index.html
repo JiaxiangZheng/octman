@@ -1,21 +1,17 @@
 ---
-title: Tsung's Homepage
-layout: page
+layout: default
 ---
 
-<ul class="listing">
 {% for post in paginator.posts %}
-  {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
-  {% if year != y %}
-    {% assign year = y %}
-    <br />
-  {% endif %}
-  <li class="listing-item">
-    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
+
+  <article class="post">
+      <h2><a href="{{ post.url }}" title="{{ post.title }}"> {{ post.title }}</a></h2>
+      <p>Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p> 
+      {{ post.excerpt }}
+      <p><a href="{{ post.url }}">点击更多...</a></p>
+  </article>
+
 {% endfor %}
-</ul>
 
 <div id="post-pagination" class="paginator">
 
