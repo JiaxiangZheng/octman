@@ -9,8 +9,6 @@ tags:
 
 本文翻译自[Godoc: documenting Go code](http://blog.golang.org/godoc-documenting-go-code)一文，一方面当作自己翻译的第一篇练习，另一方面也熟悉一下Go的文档化工具。下面是翻译内容：
 
-* * *
-
 Go项目十分重视代码的文档。事实上，在软件设计中，文档对于软件的可维护和易使用具有重大的影响。因此，文档必须是书写良好并准确的，与此同时它还需要易于书写和维护。理想情况下，文档应该与代码一起，当更新代码的时候，文档也能够同步得到更新。对于程序员来说，越容易生成好的文档，对大家就越有好处。
 
 为此，我们开发了文档化工具[godoc](http://golang.org/cmd/godoc/)。本文介绍使用godoc生成文档的方法，同时解释如何使用我们的约定规则与工具为你自己的项目书写良好的文档。
@@ -43,11 +41,8 @@ godoc的输出将忽略那些与顶层声明不相邻的注释，只有一个例
     // BUG(r): The rule Title uses for word boundaries does not handle Unicode punctuation properly.
 
 如果需要将注释转化成HTML形式的文档，Godoc用户还需要掌握一些额外的格式化规则：
-
 -   段落以空行格开
-
 -   预格式化的文档应该缩进（参考gob包的[doc.go](http://golang.org/src/pkg/encoding/gob/doc.go)）
-
 -   URL将被转化为HTML链接，无需其它的特殊标记
 
 注意到，上述的这些规则并没有任何不同寻常之处。
@@ -55,7 +50,5 @@ godoc的输出将忽略那些与顶层声明不相邻的注释，只有一个例
 事实上，godoc简单规则的最大好处就是其易用性。事实上，包含所有Go语言标准库包在内的许多Go代码都已经遵守着上述的这些规则。
 
 对于你自己的代码，遵循上述的注释方式，就可以产生出良好的文档。任何安装在`$GOROOT/src/pkg`和`GOPATH`工作区下的Go包文档都自动地被godoc索引分析并通过godoc的命令行及HTTP接口查看，同时你还可以通过指定`-path`标志设定额外的索引路径，或者单纯地运行`godoc .`获得当前代码的文档。更多的细节可以参考[godoc文档](http://golang.org/cmd/godoc/)。
-
-* * *
 
 UPDATE: 发现已经有人翻译过这个了，见[这个](http://mikespook.com/2011/04/%E3%80%90%E7%BF%BB%E8%AF%91%E3%80%91godoc%EF%BC%9A%E6%96%87%E6%A1%A3%E5%8C%96-go-%E4%BB%A3%E7%A0%81/)

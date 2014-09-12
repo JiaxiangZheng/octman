@@ -4,4 +4,4 @@ url: http://octman.com
 permalink: /:year/:month/:title/
 author: JiaxiangZheng
 highlighter: pygments
-paginate: 20
+paginate: 10
