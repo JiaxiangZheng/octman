@@ -2,9 +2,12 @@
 layout: default
 ---
 
-<article class="post">
-  <h2><a href="{{ page.url }}" title="{{ page.title }}"> {{ page.title }}</a></h2>
-  <p>Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p> 
+<article class="post">    
+	<header class="entry-header">
+		<h2 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}"> {{ page.title }}</a></h2>
+  <p class="meta">Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p> 
+  
+	</header>
   {{ content }}
 </article>
 

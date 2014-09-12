@@ -7,10 +7,6 @@ tags:
 - CSS
 ---
 
-<div style="float:left;margin:10px;"><img src="/images/2014/scss-logo.png" width="400px"></div>
-
-本文参考自[官方文档](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)及[阮一峰博客](http://www.ruanyifeng.com/blog/2012/06/sass.html)。
-
 在Web开发中，写CSS是一件很痛苦的事情，不像其它的编程语言，CSS没有变量和条件判断等特性，要设置对应的CSS，只能自己一点一点地添加。这样写出来的CSS，模块化不足，维护起来也不方便，SCSS的出现弥补了这个不足，使得CSS的书写更加容易和规范。SCSS是一个用Ruby编写的CSS的开发工具，为使用它首先需要安装Ruby并执行`gem install sass`进行安装。你也看到这里名字是SASS而非SCSS，事实上，其开发团队提供了SCSS和SASS两种不同风格的工具编写CSS，其区别只是风格上的不同，底层的逻辑是一样的。这里我们只讨论SCSS，而SASSS也是完全类似，事实上，SASS和SCSS也可以相互转换的。（官网提供了一个在线工具：[http://sassmeister.com/](http://sassmeister.com/)）
 
 SCSS文件后缀名为`.scss`，内部可直接使用CSS语法，为生成对应的CSS文件，可以通过使用`sass style.scss style.css`命令。
@@ -26,7 +22,7 @@ SASS提供了四个编译风格选项（`sass --style compressed style.sass test
 
 在SCSS中，变量的定义可以使用`$var: value;`，使用 `$var` 引用变量，为在字符串中引用变量，可以使用 `#{$var}` 。例如：
 
-    $side: left;    
+    $side: left;
     div {
         border-#{$side}-radius: 5px;
     }

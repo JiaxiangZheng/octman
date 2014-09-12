@@ -1,14 +1,15 @@
 ---
 layout: default
+title: 首页
 ---
 
 {% for post in paginator.posts %}
 
   <article class="post">
-      <h2><a href="{{ post.url }}" title="{{ post.title }}"> {{ post.title }}</a></h2>
-      <p>Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p> 
-      {{ post.excerpt }}
-      <p><a href="{{ post.url }}">点击更多...</a></p>
+      <h2 class="post-title"><a href="{{ post.url }}" title="{{ post.title }}"> {{ post.title }}</a></h2>
+      <p class="meta">Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p>
+    {{ post.excerpt }}
+    <p><a href="{{ post.url }}">点击查看更多...</a></p>
   </article>
 
 {% endfor %}

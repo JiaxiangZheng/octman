@@ -3,48 +3,60 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="{{ site.author }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>{{ page.title }} | {{ site.author }}</title>
-	<meta name="description" content="享受阅读与思考的乐趣">
-	<meta name="keywords" content="Golang,Programming,Computer Graphics,HTML,Linux,VIM,Code,Algorithm,Code,算法,程序员">
+    <meta name="description" content="享受阅读与思考的乐趣">
+    <meta name="keywords" content="Golang,Programming,Computer Graphics,HTML,Linux,VIM,Code,Algorithm,Code,算法,程序员">
     <link href="/feed/" rel="alternate" title="{{ site.author }}" type="application/atom+xml" />
     <link href="/media/octman.png" rel="icon">
     <link rel="stylesheet" href="/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="/media/css/style.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="navbar-header">
-      	<a href="/" class="navbar-brand">Tsung - 个人博客</a>
-      </div>
-      <div>
-	      <ul class="nav navbar-nav">
-	        <li><a href="/" class="ss-icon" title="首页">首页</a></li>
-	        <li><a href="/categories" class="ss-icon" title="分类" >分类</a></li>
-	        <li><a href="/tags" class="ss-icon" title="标签" >标签</a></li>
-	        <li><a href="/guestbook" class="ss-icon" title="留言" >留言</a></li>
-	        <li><a href="/about" class="ss-icon" title="关于" >关于</a></li>
-	      </ul>
-      </div>
-    </nav>
-  </header>
-    
-  <section>
-  	{{content}}
-  </section>
+  <div class="site">
+    <header>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">Tsung - 个人博客</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="/" class="nav-home ss-icon">首页</a></li>
+            <li><a href="/categories" class="nav-categories ss-icon">分类</a></li>
+            <li><a href="/tags" class="nav-tags ss-icon">标签</a></li>
+            <li><a href="/about" class="nav-about ss-icon">关于</a></li>
+            <li><a href="/feed" class="nav-rss ss-icon">订阅</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+      
+    <section class="contents">
+      {{content}}
+    </section>
 
-  <footer class="text-center">
-    <p><small>Copyright &copy; Tsung 2013-2014 | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> &amp; <a href="https://github.com/JiaxiangZheng/octman">Github</a></small></p>
-  </footer>
-</body>
-</html>
+    <footer class="text-center">
+      <p><small>Copyright &copy; Tsung 2013-2014 | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> &amp; <a href="https://github.com/JiaxiangZheng/octman">Github</a></small></p>
+    </footer>
+  </div>
+  
+  <script>
+    (function () {
+      // TODO: use more flexible way to determin
+      var href = window.location.href,
+          hightlight = document.querySelector(".nav.navbar-nav");
 
-<!--     <article>
-=======
-
-  <footer class="text-center">
-    <p><small>Copyright &copy; Tsung 2013-2014 | Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> &amp; <a href="https://github.com/JiaxiangZheng/octman">Github</a></small></p>
-  </footer>
+      if (href.indexOf("categories") > -1) {
+        hightlight = hightlight.querySelector(".nav-categories");
+      } else if (href.indexOf("tags") > -1) {
+        hightlight = hightlight.querySelector(".nav-tags");
+      } else if (href.indexOf("comments")) {
+        hightlight = hightlight.querySelector(".nav-comments");
+      } else if (href.indexOf("about")) {
+        hightlight = hightlight.querySelector(".nav-about");
+      }
+      hightlight.className += " active";
+    })();
+  </script>
 </body>
 </html>

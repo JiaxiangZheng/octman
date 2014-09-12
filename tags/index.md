@@ -9,9 +9,9 @@ layout: page
 {% endfor %}
 </div>
 
-<ul class="listing">
+<div class="listing">
 {% for tag in site.tags %}
-  <li class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</li>
+  <h2 class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</h2>
 {% for post in tag[1] %}
   <li class="listing-item">
   <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
@@ -19,5 +19,5 @@ layout: page
   </li>
 {% endfor %}
 {% endfor %}
-</ul>
+</div>
 
