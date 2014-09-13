@@ -3,5 +3,5 @@ baseurl: /
 url: http://octman.com
 permalink: /:year/:month/:title/
 author: JiaxiangZheng
-highlighter: pygments
+highlighter: rouge
 paginate: 10
