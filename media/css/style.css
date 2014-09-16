@@ -3,8 +3,6 @@ a:hover {
 
 @media (min-width: 960px) {
   body .site {
-    /* margin-top: 48px; */
-    /* margin-top: 3.428571429rem; */
     margin-bottom: 48px;
     margin-bottom: 3.428571429rem;
     box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3); } }
@@ -17,8 +15,8 @@ a:hover {
   background-color: #fff; }
 
 section.contents {
-  padding: 0 40px;
-  padding: 0 2.857142857rem; }
+  padding: 0 2.857142857rem;
+  padding-bottom: 30px; }
 
 blockquote p {
   font-size: inherit; }
@@ -52,6 +50,18 @@ img {
 .post .entry-header {
   padding-bottom: 1.714285714rem; }
 
+article.post {
+  padding-bottom: 10px; }
+
+.contents .post-nav {
+  overflow: hidden;
+  font-size: 120%;
+  padding: 5px 10px; }
+  .contents .post-nav .post-next {
+    float: left; }
+  .contents .post-nav .post-prev {
+    float: right; }
+
 footer {
   margin: 10px 1px; }
   footer small {
@@ -68,3 +78,8 @@ footer {
   padding: 15px 0px;
   list-style: none;
   margin-left: -25px; }
+
+.listing-item {
+  list-style: none; }
+  .listing-item a {
+    margin: 0 5px; }

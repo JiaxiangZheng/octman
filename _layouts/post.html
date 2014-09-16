@@ -6,9 +6,18 @@ layout: default
 	<header class="entry-header">
 		<h2 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}"> {{ page.title }}</a></h2>
   <p class="meta">Posted on <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time> by <a href="/about">Tsung</a></p> 
-  
 	</header>
   {{ content }}
 </article>
 
+<div class="post-nav">
+    {% if page.previous %} 
+    <a  class="post-prev" href="{{ site.url_root }}{{ page.previous.url }}">{{page.previous.title}} →</a>
+    {% endif %}
+
+    {% if page.next %} 
+    <a class="post-next" href="{{ site.url_root }}{{ page.next.url }}">← {{page.next.title}}</a>
+    {% endif %}
+</div>
+  
 {% include comments.md %}

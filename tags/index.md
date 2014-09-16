@@ -9,15 +9,15 @@ layout: page
 {% endfor %}
 </div>
 
-<div class="listing">
-{% for tag in site.tags %}
-  <h2 class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</h2>
-{% for post in tag[1] %}
-  <li class="listing-item">
-  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-{% endfor %}
-</div>
+<ul class="listing">
+  {% for tag in site.tags %}
+    <h2 class="listing-seperator" id="{{ tag[0] }}">{{ tag[0] }}</h2>
+  {% for post in tag[1] %}
+    <li class="listing-item">
+    <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  {% endfor %}
+</ul>
 
