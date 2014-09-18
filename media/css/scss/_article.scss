@@ -1,0 +1,29 @@
+
+.post {
+	.entry-header {
+		padding-bottom: 1.714285714rem;
+	}
+
+}
+article.post {
+  padding-bottom: 10px;
+}
+
+.contents {
+  .post-nav {
+    overflow: hidden;
+    font-size: 120%;
+    padding: 5px 10px;
+    .post-next {
+      float: left;
+    }
+    .post-prev {
+      float: right;
+    }
+  }
+}
+
+.footnotes {
+  font-size: 80%;
+  color: #a0a0a0;
+}

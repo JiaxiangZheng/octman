@@ -12,7 +12,8 @@ a:hover {
     max-width: 960px;
     overflow: hidden; } }
 .site {
-  background-color: #fff; }
+  background-color: #fff;
+  overflow-x: hidden; }
 
 section.contents {
   padding: 0 2.857142857rem;
@@ -61,6 +62,10 @@ article.post {
     float: left; }
   .contents .post-nav .post-prev {
     float: right; }
+
+.footnotes {
+  font-size: 80%;
+  color: #a0a0a0; }
 
 footer {
   margin: 10px 1px; }
