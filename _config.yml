@@ -1,7 +1,7 @@
 markdown: kramdown
 baseurl: /
 url: http://octman.com
-permalink: /:year/:month/:title/
+permalink: /:year-:month-:title/
 author: JiaxiangZheng
-highlighter: pygments
-paginate: 20
+highlighter: rouge
+paginate: 10

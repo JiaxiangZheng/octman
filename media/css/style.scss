@@ -1,0 +1,56 @@
+a:hover {
+    background: none repeat scroll 0 0 #D0E8F4;
+}
+@media (min-width: 960px) {
+	body .site {
+		margin-bottom: 48px;
+		margin-bottom: 3.428571429rem;
+		box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	}
+}
+@media (min-width: 600px)  {
+	body .site {
+		margin: 0 auto;
+		max-width: 960px;
+		overflow: hidden;
+	}
+}
+.site {
+	background-color: #fff;
+  overflow-x: hidden;
+}
+section.contents {
+	padding: 0 2.857142857rem;
+  padding-bottom: 30px;
+}
+blockquote p {
+	font-size: inherit;
+}
+
+h1, h2, h3, h4 {
+	font-weight:bold;
+}
+
+h1 {
+  font-size: 1.75em;
+  line-height: 1.75em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.25em;
+}
+h4 {
+  font-size: 1.0em;
+  margin: 0.75em 0px 0.75em 0
+}
+img {
+  outline: 0; 
+  max-width: 100%;
+  height: auto; 
+}
+@import "scss/navigation";
+@import "scss/article";
+@import "scss/footer";
+@import "scss/tag";

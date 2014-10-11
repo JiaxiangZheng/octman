@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>resume_cn-jiaxiang_zheng</title>
+	<style>
+/*		* {
+		}
+*/		
+		ul {
+			padding-left: 20px;
+		}
+		body {
+			font-family: Times;	
+			width: 800px;
+			margin: 0 auto;
+			padding: 0 100px;
+		}
+		nav .title {
+			text-align: center;
+		}
+		nav .title h1 {
+			margin: 0 auto;
+		}
+		.title + hr {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.info ul {
+			margin: 0 auto;
+			font-size: small;
+			list-style: none;
+		}
+		article {
+			box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			padding: 0 5px;			
+		}
+		.title {
+			margin-top: 15px;
+			margin-bottom: 5px;
+		}
+		.title span {
+			background-color: #D9D9D9;
+			font-weight: bold;
+		}
+		.title hr {
+			margin: 0 auto;
+			border: 1px black solid;
+		}
+		.description ul {
+			margin-top: 0;
+		}
+		.time-period {
+			text-align: right;
+		}
+		table {
+			width: 800px;
+		}
+		.pub-author:first-child {
+			font-weight: bold;
+		}
+		.pub-conference, .italic {
+			font-style: italic;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.right {
+			display: inline-block;
+			float: right;
+		}
+		.clear {
+			clear: both;
+		}
+		.project-list div {
+			padding: 2px 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="title"><h1>郑家祥</h1></div>
+			<hr>
+		</nav>
+	</header>
+
+	<article>
+		<section>
+			<div class="title">
+				<span>求职意向</span>
+				<hr>
+			</div>
+			<div class="description">
+				希望从事Web前端相关的研发工作。
+			</div>
+		</section>
+
+		<section>
+			<div class="title">
+				<span>工作背景</span>
+				<hr>
+			</div>
+			<div class="description">
+				<table>
+					<tr>
+						<td>微策略软件（杭州）有限公司</td>
+						<td class="time-period">2014.04-至今</td>
+					</tr>
+				</table>
+				
+			</div>
+		</section>
+
+		<section>
+			<div class="title">
+				<span>教育背景</span>
+				<hr>
+			</div>
+			<div class="description">
+				<table>
+					<tr>
+						<td><span class="bold">浙江大学</span>-工学硕士</td>
+						<td class="time-period">2011.09-2014.04</td>
+					</tr>
+					<tr>
+						<td>计算机科学与技术（计算机视觉与动画）</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td><span class="bold">南昌大学</span>-理学学士</td>
+						<td class="time-period">2007.09-2011.06</td>
+					</tr>
+					<tr>
+						<td>数学与应用数学</td>
+					</tr>
+				</table>
+			</div>
+		</section>
+
+		<section>
+			<div class="title"><span>项目经历</span><hr></div>
+			<div class="description">
+				<ul>
+					<li class="project-list">动态三维人体重建与跟踪（已被Computers &amp; Graphics[SCI]接收）<span class="right">2013.02–2013.07</span><span class="clear"></span>
+						<div>
+							<span class="italic">我们使用一种称为SCAPE的方法训练人体数据集并获得姿态与体态参数，通过这些参数学习并生成一个对应扫描数据的人体模板作为一个先验，以更好地进行人体模型的三维重建。同时利用学习的姿态参数来对运动的人体进行跟踪，从而重建一个动态的人体模型。</span><br>
+							<span class="responsibility">我负责了整个算法流程的设计和实现。</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<div class="title"><span>编程技能</span><hr></div>
+			<div class="description">
+				<ul>
+					<li><span class="bold">编程语言：</span>C/C++（熟练）， Matlab（一般），JS/HTML/CSS</li>
+					<li><span class="bold">开发工具：</span>Git，Visual Studio，Vim，SCSS/Emmet</li>
+					<li><span class="bold">编程框架：</span>Dojo，jQuery</li>
+					<li><span class="bold">写作工具：</span>Markdown，Pandoc，LaTeX</li>
+					<li><span class="bold">英文能力：</span>CET-6（567）</li>
+				</ul>
+			</div>
+		</section>
+
+		<section>
+			<div class="title"><span>获奖与荣誉</span><hr></div>
+			<div class="description">
+
+				<ul>
+					<li>优秀毕业生<span class="right">2011.06 | 2014.04</span><span class="clear"></span></li>
+					<li>国家励志奖学金<span class="right">2008 | 2010</span><span class="clear"></span></li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="publication">
+			<div class="title"><span>发表文章</span><hr></div>
+			<div class="description">
+				<ul>
+					<li><span class="pub-author">Jiaxiang Zheng</span>, <span class="pub-author">Ming Zeng</span>, <span class="pub-author">Xuan Cheng</span>, and <span class="pub-author">Xinguo Liu</span>. <span class="pub-title">SCAPE-Based Human Performance Reconstruction</span>. <span class="pub-conference">Computers &amp; Graphics 2013</span></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+	
+	<footer>
+		
+	</footer>
+</body>
+</html>
