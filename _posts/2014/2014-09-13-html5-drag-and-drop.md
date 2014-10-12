@@ -9,21 +9,6 @@ tags:
 - JavaScript
 ---
 
-<style>
-  div {
-    margin: 10px auto;
-    border: 1px solid #fe0000;
-  }
-  #dragme {
-    border-radius: 5px;
-    width: 30px; height: 30px;
-    background-color: #7CC5EC;
-  }
-  #dropme {
-    width: 100px; height: 100px;
-  }
-</style>
-
 原生HTML5可实现元素的拖放功能，其中涉及到拖放元素及目标元素（即被放置的元素）。但默认情况下，只有图像与链接是可拖动的，对于其余的元素，需要设置它的`draggable`属性为`true`才能开启其可拖动性。在拖放的整个过程中，依次发生的事件有：
 
 * 拖放元素
@@ -41,8 +26,25 @@ tags:
 
 利用dataTransfer对象，不仅可以传输数据，还可以设置被拖动元素及放置目标可接收什么操作。这可以通过 dataTransfer 的 dropEffect 和 effectAllowed 属性获得。在 `dragstart` 中我们可以设置 effectAllowed 以限制该拖动元素可允许行为， 然后在`dragenter`中设置目标元素能接收什么行为。（事实上，我们可以通过修改这些值观察浏览器生成的鼠标边上的小图标）
 
-<div id="dragme">dragme</div>
-<div id="dropme" width="100" height="100">dropme</div>
+<style>
+  #dnd-test div {
+    margin: 10px auto;
+    border: 1px solid #fe0000;
+  }
+  #dragme {
+    border-radius: 5px;
+    width: 30px; height: 30px;
+    background-color: #7CC5EC;
+  }
+  #dropme {
+    width: 100px; height: 100px;
+  }
+</style>
+
+<div id="dnd-test">
+    <div id="dragme">dragme</div>
+    <div id="dropme" width="100" height="100">dropme</div>
+</div>
 
 <script>
   (function () {
