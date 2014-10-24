@@ -68,7 +68,6 @@ tags:
 
     dropme.on('dragenter', function () {
         console.info('something entered');
-        evt.preventDefault();
     });
     dropme.on('dragover', function () {
         console.info('something is hovering on me');
@@ -78,8 +77,13 @@ tags:
         console.info('something leaved from me');
     });
     dropme.on('drop', function () {
+        evt.preventDefault();
         console.info('something dropped to me');
     });
   }());
 </script>
+
+### Drag and Drop事件的模拟
+
+由于DnD是HTML5特性，对于不支持它的浏览器（如IE9以下的版本）
 
