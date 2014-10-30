@@ -42,12 +42,16 @@ JavaScript用于操纵HTML页面的行为，而它与HTML之间的交互主要�
     btn.onclick = function() {
     }
 
+DOM0级事件处理程序的好处在于足够简单。但它只工作于事件冒泡阶段，无法工作于事件捕捉阶段。而且它也只能绑定一个事件处理程序，另外它只适用于非IE浏览器。
+
 **DOM2级事件处理程序**：使用`addEventListener`可以将事件处理添加到监听列表中，它的最后一个参数接受布尔值，为真则表示捕获阶段调用事件处理程序；为假则在冒泡阶段调用。注意，使用`addEventListener`添加的事件处理程序只能由`removeEventListener`删除。大部分情况下，最后一个参数应该设置为`false`以便程序添加到事件的冒泡阶段。另外，需要注意的是，在删除事件处理程序的时候，接受的第二个参数需要与添加时的参数完全一样，即不能使用匿名函数，而应该是一个函数的引用。
 
     var btn = document.getElementById("btn");
     btn.addEventListener("click", function() {}, false);
 
-**IE事件程序程序**：IE8及前面的版本中处理事件程序方法与DOM方法不太一样，首先，它对应的方法名分别为`attachEvent`和`detachEvent`；其次，事件的名称是以`on`开头的；另外，它只支持事件冒泡，因此它只有两个参数。
+DOM2级事件处理程序对于IE9-是不适用的，因此才有了下面的IE事件处理程序：
+
+**IE事件处理程序**：IE8及前面的版本中处理事件程序方法与DOM方法不太一样，首先，它对应的方法名分别为`attachEvent`和`detachEvent`；其次，事件的名称是以`on`开头的；另外，它只支持事件冒泡，因此它只有两个参数。
 
     var btn = document.getElementById("btn");
     btn.attachEvent("onclick", function() {});
