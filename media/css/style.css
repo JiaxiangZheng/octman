@@ -44,6 +44,13 @@ img {
   max-width: 100%;
   height: auto; }
 
+p.img {
+  max-width: 500px;
+  border: 2px solid silver;
+  border-radius: 10px;
+  display: block;
+  margin: 5px auto; }
+
 .navbar.navbar-default {
   border: 1px solid transparent;
   border-bottom: #e7e7e7 solid 1px; }
@@ -88,3 +95,5 @@ footer {
   list-style: none; }
   .listing-item a {
     margin: 0 5px; }
+
+/*# sourceMappingURL=style.css.map */

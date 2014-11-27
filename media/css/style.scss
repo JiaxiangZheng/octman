@@ -50,6 +50,13 @@ img {
   max-width: 100%;
   height: auto; 
 }
+p.img {
+  max-width: 500px;
+  border: 2px solid silver;
+  border-radius: 10px;
+  display: block;
+  margin: 5px auto;
+}
 @import "scss/navigation";
 @import "scss/article";
 @import "scss/footer";
