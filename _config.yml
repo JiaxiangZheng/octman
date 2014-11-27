@@ -4,4 +4,5 @@ url: http://octman.com
 permalink: /:year-:month-:title/
 author: JiaxiangZheng
 highlighter: rouge
+github: https://github.com/JiaxiangZheng/octman.git
 paginate: 10
