@@ -12,7 +12,72 @@ jQuery是前端开发过程中广泛使用的一个库。据统计，Alex排名�
 
 ## 基础模块
 
-TODO：浏览器客户端检测、防御式noConflict、对象辅助函数等。
+关于jQuery的整体框架结构，我们可以参考它提供的一个sub方法（返回新的jQuery对象，修改这个对象不影响原来的jQ对象）：
+
+	sub: function() {
+        // 工厂方法
+		function jQuerySub( selector, context ) {
+			return new jQuerySub.fn.init( selector, context );
+		}
+        // 注意这里使用了深度拷贝
+		jQuery.extend( true, jQuerySub, this );
+		jQuerySub.superclass = this;
+		jQuerySub.fn = jQuerySub.prototype = this();
+		jQuerySub.fn.constructor = jQuerySub;
+		jQuerySub.sub = this.sub;
+		jQuerySub.fn.init = function init( selector, context ) {
+			if ( context && context instanceof jQuery && !(context instanceof jQuerySub) ) {
+				context = jQuerySub( context );
+			}
+
+			return jQuery.fn.init.call( this, selector, context, rootjQuerySub );
+		};
+		jQuerySub.fn.init.prototype = jQuerySub.fn;
+		var rootjQuerySub = jQuerySub(document);
+		return jQuerySub;
+	},
+
+这里需要注意的是`jQuery.fn`，即jQuery这个工厂函数的原型。它是一个对象：
+
+    jQuery.fn = jQuery.prototype = {
+        constructor: jQuery,    // constructor指回jQuery工厂函数
+        init: function () {},   // jQuery最核心的选择器匹配函数
+        selector: "",
+        jquery: '1.7.1',
+        each: function () {},
+        ready: function (fn) {},
+        ...
+    };
+
+从源码中，我们可以看到，jQuery这个工厂函数实际上最终也是调用了`jQuery.prototype.init`这个方法实例出来的一个新对象，所以`jQuery.prototype.init`可以看作一个构造函数，它的原型也是指向`jQuery.prototype`。
+
+jQuery提供了一个each方法，可以对对象每一个属性成员都调用同一个回调函数`callback.apply()`。
+
+为了实现多层对象的继承，jQuery提供extend这个API。其接口为：
+
+    // 支持深度拷贝
+    // 如果参数只有一个，则是扩展jQuery本身，否则扩展传入的目标对象
+    $.extend([deep], target, [object1], [object2], [...]);
+
+这里如果提供的参数包含深度拷贝，则需要使用递归的方法扩展其中的某些属性（处理对象Object和数组Array两种情形）。
+
+有了extend这个方法，对jQuery本身（或其原型）的扩展就变得非常地方便了：
+
+    jQuery.extend({
+        prop: value,
+        fun:  function () {}
+    });
+
+`jQuery(document).ready | jQuery(fn)`与`dom.onload`区别在于，一旦DOM构建好以后，ready事件就可以被触发了，而onload只会在所有DOM及脚本图像等资源处理好以后才开始。jQuery是怎么实现的呢？它会有一个计时器(setTimeout)每隔一定时间定期查询`document.body`是否已经构建完成，完成的时候就会触发相应的回调队列（见后节），这个回调队列的创建由bindReady方法构建。
+
+此外，为了确定浏览器的版本信息，jQuery使用了正则表达式进行处理以匹配出合适的浏览器内核名称、版本等相关信息。PS：对`navigator.userAgent`字符串进行解析就可以获得这些信息。
+
+## 属性操作
+
+jQuery的属性操作包括HTML属性操作（attr）、DOM属性操作（prop）、CSS操作（class）和值操作（val）。总体上说，`jQuery.prototype`和`jQuery`都包含了同名的各操作方法，但它们之间的关系是（以attr为例）：`jQuery.fn.attr`里会通过`jQuey.access`方法作一定的检查，而后再调用到`jQuery.attr`处理具体的问题。所以本质上，主要的实现是在jQuery相关的方法中。
+
+**TODO: jQuery.attr和jQuery.prop的实现及jQuery.access方法**。
+
 
 ## Sizzle选择器
 
@@ -136,6 +201,10 @@ TODO：Callbacks的实现。
     }
 
 以上就是异步队列模块的全部内容。
+
+## 数据缓存
+
+## 队列模块
 
 ## 事件系统
 
