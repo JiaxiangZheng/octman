@@ -8,6 +8,23 @@ comments: yes
 
 jQuery是前端开发过程中广泛使用的一个库。据统计，Alex排名前100的网站几乎都直接或间接地使用了jQuery库，由此可见其适用性之广，这也从另一个侧面说明其代码的健壮性。因此，学习和研究jQuery是很有价值的，本文也将作为我学习jQuery的笔记，将持续更新。
 
+最新版的jQuery使用的是符合AMD规范的require.js进行模块式开发，为了方便调试，可以在测试页面加载require.js并设置相应的路径：
+
+    <script data-main="./config" src="external/requirejs/require.js"></script> 
+
+    // config.js
+    require.config({
+        baseUrl: "external",
+        paths: {
+            "sizzle": "sizzle/dist/sizzle",
+            "qunit": "qunit/qunit"
+        }
+    });
+
+    require(['../src/jquery'], function (jQuery) {
+        console.log('complete jquery loading');
+    });
+
 首次使用jQuery选择器的时候，也许会陷入一个认识误区：调用jQuery选择DOM时返回的结果与`document.querySelectorAll`是一样的。但事实并非如此。jQuery返回的是jQuery对象组成的数组，对象内部包含了一个context属性指向相应的DOM结点。对于支持`querySelector*`的浏览器，jQuery选择器引擎会先优先使用`querySelector*`方法；而对于不支持的浏览器（如IE6、IE7等），才会使用选择器引擎去匹配找出相应的结果。
 
 ## 基础模块
@@ -34,7 +51,7 @@ jQuery是前端开发过程中广泛使用的一个库。据统计，Alex排名�
 		};
 		jQuerySub.fn.init.prototype = jQuerySub.fn;
 		var rootjQuerySub = jQuerySub(document);
-		return jQuerySub;
+		ndreturn jQuerySub;
 	},
 
 这里需要注意的是`jQuery.fn`，即jQuery这个工厂函数的原型。它是一个对象：
@@ -159,6 +176,20 @@ jQuery最核心的一个功能就是可以通过CSS选择器的方式获取DOM�
 
 TODO：Callbacks的实现。
 
+    // 工厂方法返回Callbacks实例
+    jQuery.Callbacks = function (options) {
+        var list, memory, 
+            fire = function () {
+            }
+        var self = {
+            fireWith: function () {}
+            fire: function () {}
+            add: function () {}
+            remove: function () {}
+        };
+        return self;
+    }
+
 事实上，Deferred模块提供了三种状态的回调列表：resolved、rejected和progress状态（每种状态对应一个回调队列Callbacks实例）。每种状态的回调队列都有各自的添加回调函数的方法，分别是done、fail和progress，实际上它们都是Callbacks的add方法的一个包装。当然，jQuery还提供了一个always方法用于添加回调函数，实际上就是done和fail都会添加这个回调，这样看来还是调用了done和fail。然后jQuery提供了三个执行（触发）函数：resolve、reject和notify（当然，还提供了对应的With函数用于设定自定义的上下文）。对于这三种情况，jQuery的实现还是很值得学习的：
 
     // tuples定义一个数组，包含三种状态的触发函数名、回调函数添加方法、异步队列及状态名称
@@ -177,11 +208,12 @@ TODO：Callbacks的实现。
     // TODO: 分析
     then: function( /* fnDone, fnFail, fnProgress */ ) {
         var fns = arguments;
-        return jQuery.Deferred(function( newDefer ) {
+        // 返回的是一个新的Deferred对象所创建的promise----在创建新Deferred的同时，还会给每一个Callbacks添加对应的回调函数
+        return jQuery.Deferred(function( newDefer ) {   // -----创建Deferred的时候会触发
             jQuery.each( tuples, function( i, tuple ) {
                 var fn = jQuery.isFunction( fns[ i ] ) && fns[ i ];
                 // deferred[ done | fail | progress ] for forwarding actions to newDefer
-                deferred[ tuple[1] ](function() {
+                deferred[ tuple[1] ](function() {       // --------这里即会被触发的回调
                     var returned = fn && fn.apply( this, arguments );
                     if ( returned && jQuery.isFunction( returned.promise ) ) {
                         returned.promise()
@@ -210,7 +242,25 @@ TODO：Callbacks的实现。
 
 ## 异步请求
 
+jQuery的AJAX模块支持GET和POST请求，在具体的实现细节上，二者实际调用的jQuery.ajax操作，只不过传入的参数不同而已。而在GET请求的数据形式上，jQuery除了支持一般的请求外，还支持JSONP的跨域请求及script文件，这一点在jQuery.ajax参数的表现上，仅仅只是参数中的dataType不一样而已。
+
+
 ## 动画生成
+
+## 10 Things I learned from jQuery
+
+1. 立即函数 
+
+    (function () {}())
+    !function () {}()
+    (function () {})()
+
+    // 这里使用了undefined的好处在于避免外部的undefined被修改
+    // 压缩代码上，提高压缩率
+    function (window, document, undefined) {
+        // 
+    }(this, document)
+
 
 ## 参考
 
