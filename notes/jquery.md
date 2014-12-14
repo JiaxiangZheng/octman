@@ -236,31 +236,36 @@ TODO：Callbacks的实现。
 
 ## 数据缓存
 
+为了实现对DOM及其关联的数据解耦，jQuery实现了数据缓存模块。首先，它并不会直接把数据加到DOM上，而是在一开始设置数据的时候将数据关联到一个Data对象上，专门用于存储数据。所有的数据对象都是存储在Data对象的cache属性中，通过一个唯一的key映射到每一个具体的对象上。
+
+    // $.data中所涉及到的都是这个Data构造的对象
+    function Data() {
+        this.expando = jQuery.expando + Math.random();
+    }
+    // 真实的数据其实存放在cache上，然后key标识一个待关联的对象，用于获取一个cache中标识的ID，与前面的全局唯一ID不一样（因为有可能多次设置同一个属性的值）
+    Date.prototype = {
+        key: function () {},
+        set: function () {},
+        get: function () {}
+    };
+
+    var userData = new Data();  // 每次调用$.data实际上都是向userData的cache属性中设值
+
+有了Data类以后，
+
 ## 队列模块
+
+队列模块基于前面提到的数据缓存和Deferred异步队列模块。
 
 ## 事件系统
 
 ## 异步请求
 
-jQuery的AJAX模块支持GET和POST请求，在具体的实现细节上，二者实际调用的jQuery.ajax操作，只不过传入的参数不同而已。而在GET请求的数据形式上，jQuery除了支持一般的请求外，还支持JSONP的跨域请求及script文件，这一点在jQuery.ajax参数的表现上，仅仅只是参数中的dataType不一样而已。
-
+jQuery的AJAX模块支持GET和POST请求，在具体的实现细节上，二者实际调用的jQuery.ajax操作，只不过传入的参数不同而已。而在GET请求的数据形式上，jQuery除了支持一般的请求外，还支持JSONP的跨域请求及script文件，这一点在jQuery.ajax参数的表现上，仅仅只是参数中的dataType不一样而已，而内部的实现已经屏蔽掉了具体的细节差异。
 
 ## 动画生成
 
 ## 10 Things I learned from jQuery
-
-1. 立即函数 
-
-    (function () {}())
-    !function () {}()
-    (function () {})()
-
-    // 这里使用了undefined的好处在于避免外部的undefined被修改
-    // 压缩代码上，提高压缩率
-    function (window, document, undefined) {
-        // 
-    }(this, document)
-
 
 ## 参考
 
