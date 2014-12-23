@@ -205,15 +205,19 @@ TODO：Callbacks的实现。
 
 由于其它方法比较简单，这里只谈一下`promise.then`方法，实际上它在低版本中的方法名为pipe，用于返回新的异步队列的只读副本，通过过滤函数过滤当前异步队列的状态及值：
 
-    // TODO: 分析
     then: function( /* fnDone, fnFail, fnProgress */ ) {
+        // 1. 重新创建新的Deferred对象
+        // 2. 向老的Deferred对象（this）添加包装了的函数
+        // 3. 在这个包装了的函数中：
+        //    - 先调用我们一开始传入的fnDone | fnFail | fnProgress
+        //	  - 如果返回的是一个promise对象，将向这个promise对象中调用done/fail/progress来分别添加下一个then中的参数
+        //    - 否则，触发设置resolved状态
         var fns = arguments;
-        // 返回的是一个新的Deferred对象所创建的promise----在创建新Deferred的同时，还会给每一个Callbacks添加对应的回调函数
-        return jQuery.Deferred(function( newDefer ) {   // -----创建Deferred的时候会触发
+        return jQuery.Deferred(function( newDefer ) {
             jQuery.each( tuples, function( i, tuple ) {
                 var fn = jQuery.isFunction( fns[ i ] ) && fns[ i ];
                 // deferred[ done | fail | progress ] for forwarding actions to newDefer
-                deferred[ tuple[1] ](function() {       // --------这里即会被触发的回调
+                deferred[ tuple[1] ](function() {	// 这里是向老的Deferred对象添加包装的回调（即 2 ）
                     var returned = fn && fn.apply( this, arguments );
                     if ( returned && jQuery.isFunction( returned.promise ) ) {
                         returned.promise()
@@ -230,7 +234,20 @@ TODO：Callbacks的实现。
             });
             fns = null;
         }).promise();
-    }
+    },
+
+使用示例：
+
+    var defer = $.Deferred();   // 返回Deferred对象
+    setTimeout(function () {
+        defer.resolve('HI');    // 触发成功的回调 | 即后面添加的回调函数
+    }, 50);
+    defer.then(function (msg) { // 向defer的回调列表中添加回调函数（传入的函数作一定的包装以后再添加），同时会返回一个新的promise对象，用于链式调用then
+        console.log(msg);
+    });
+    defer.done(function (msg) { // 直接向defer回调列表添加我们自定义的函数
+        console.log('I came from ' + msg);
+    });
 
 以上就是异步队列模块的全部内容。
 
