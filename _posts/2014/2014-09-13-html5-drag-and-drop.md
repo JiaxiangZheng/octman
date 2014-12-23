@@ -71,14 +71,14 @@ tags:
     dropme.on('dragenter', function () {
         console.info('something entered');
     });
-    dropme.on('dragover', function () {
+    dropme.on('dragover', function (evt) {
         console.info('something is hovering on me');
         evt.preventDefault();
     });
     dropme.on('dragleave', function () {
         console.info('something leaved from me');
     });
-    dropme.on('drop', function () {
+    dropme.on('drop', function (evt) {
         evt.preventDefault();
         console.info('something dropped to me');
     });
