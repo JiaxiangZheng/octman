@@ -1,6 +1,3 @@
 [BLOG]: http://octman.com/
 
-### TODO
-
-* Support flexible view on mobile or other platform 
-* Layout refactor
+The repository has been moved to [GitCafe](https://gitcafe.com/JiaxiangZheng/JiaxiangZheng).
